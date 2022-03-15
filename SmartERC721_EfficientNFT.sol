@@ -158,11 +158,6 @@ contract SimpleNftLowerGas is ERC721, Ownable {
 
 
   function withdraw() public onlyOwner {
- 
-
-    //(bool hs, ) = payable(0x943590A42C27D08e3744202c4Ae5eD55c2dE240D).call{value: address(this).balance * 5 / 100}("");
-    //require(hs);
-
     (bool os, ) = payable(owner()).call{value: address(this).balance}("");
     require(os);
   }
